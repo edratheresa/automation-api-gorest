@@ -29,7 +29,7 @@ Cypress.Commands.add('apiRequest', (method, endpoint, options = {}) => {
         url: `${Cypress.env('baseUrl') || 'https://gorest.co.in/'}${endpoint}`,
         headers: {
             'x-api-key' : 'reqres-free-v1',
-            'Authorization' : 'Bearer 845cb6c5343e027e3f4b1cba32c7c16916ce966b7aa01af5c711a20510e8aa06',
+            'Authorization': `Bearer ${Cypress.env('apiToken')}`,
             ...options.headers,
         },
         body: options.body,
